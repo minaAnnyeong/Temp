@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="myproject.myproject.service.MemberServiceIntegrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-20T06:45:18.814Z" hostname="ROH-MINA" time="0.406">
+  <properties/>
+  <testcase name="testFindOne()" classname="myproject.myproject.service.MemberServiceIntegrationTest" time="0.029"/>
+  <testcase name="testFindMembers()" classname="myproject.myproject.service.MemberServiceIntegrationTest" time="0.009"/>
+  <testcase name="회원가입()" classname="myproject.myproject.service.MemberServiceIntegrationTest" time="0.364"/>
+  <system-out><![CDATA[2025-05-20T15:45:18.787+09:00  INFO 11080 --- [MyProject] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [myproject.myproject.service.MemberServiceIntegrationTest]: MemberServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-20T15:45:18.807+09:00  INFO 11080 --- [MyProject] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration myproject.MyProjectApplication for test class myproject.myproject.service.MemberServiceIntegrationTest
+Hibernate: select m1_0.member_id,m1_0.member_email,m1_0.member_name,m1_0.password from member m1_0 where m1_0.member_email=?
+Hibernate: insert into member (member_email,member_name,password) values (?,?,?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
