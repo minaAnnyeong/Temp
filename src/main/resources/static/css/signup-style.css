@@ -1,0 +1,85 @@
+
+.main-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+.signup-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007BFF;
+}
+
+
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+.input-line label {
+    width: 80px; /* Fixed width for label */
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    color: black;
+    margin-right: 10px;
+}
+
+.input-line input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: small;
+    display: block;
+}
+
+
+.button-wrapper-next {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.nextbtn {
+    width: 100px;
+    min-width: fit-content;
+    margin-top: 10%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nextbtn:hover {
+    background-color: #0056b3;
+}
+
+
