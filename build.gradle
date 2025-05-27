@@ -98,9 +98,11 @@ tasks.register('buildFrontend', Exec) {
 
 processResources.dependsOn buildFrontend
 
-// Copy build to static
+// Copy frontend build to Spring Boot
 tasks.register('copyFrontend', Copy) {
     from 'src/main/frontend/build'
     into 'src/main/resources/static'
 }
 buildFrontend.finalizedBy(copyFrontend)
+
+

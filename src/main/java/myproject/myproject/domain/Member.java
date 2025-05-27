@@ -24,7 +24,7 @@ public class Member {
     @Column(name = "member_email")
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 100)
     private String password;
 
 

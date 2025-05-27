@@ -7,16 +7,17 @@ DROP TABLE IF EXISTS `payment` CASCADE;
 
 CREATE TABLE `member` (
                           `member_id` bigint NOT NULL AUTO_INCREMENT,
-                          `member_name` varchar(50) NOT NULL,
-                          `member_email` varchar(50) NOT NULL,
-                          `password` varchar(50) NOT NULL,
+                          `member_name` VARCHAR(50) NOT NULL,
+                          `member_email` VARCHAR(50) NOT NULL,
+                          `password` VARCHAR(100) NOT NULL,
                           PRIMARY KEY (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
 CREATE TABLE `category` (
                             `category_id` bigint NOT NULL AUTO_INCREMENT,
-                            `category_name` varchar(50) DEFAULT NULL,
-                            `category_type` varchar(50) DEFAULT NULL,
+                            `category_name` VARCHAR(50) DEFAULT NULL,
+                            `category_type` VARCHAR(50) DEFAULT NULL,
                             PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -31,8 +32,8 @@ CREATE TABLE  `member_category` (
 
 CREATE TABLE `payment` (
                            `payment_id` bigint NOT NULL AUTO_INCREMENT,
-                           `payment_name` varchar(50) DEFAULT NULL,
-                           `payment_type` varchar(50) DEFAULT NULL,
+                           `payment_name` VARCHAR(50) DEFAULT NULL,
+                           `payment_type` VARCHAR(50) DEFAULT NULL,
                            PRIMARY KEY (`payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
