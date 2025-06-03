@@ -30,7 +30,7 @@ public class MemberServiceIntegrationTest {
         member.setPassword("test");
 
         // when
-        Long saveId = memberService.join(member);
+        Long saveId = memberService.registerMember(member).getId();
 
         // then
         Member findMember = memberService.findOne(saveId).get();
@@ -53,9 +53,9 @@ public class MemberServiceIntegrationTest {
         member2.setPassword("spring");
 
         // when
-        memberService.join(member1);
+        memberService.registerMember(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class,
-                () -> memberService.join(member2));
+                () -> memberService.registerMember(member2));
 
         assertThat(e.getMessage()).isEqualTo("Member already exists");
 

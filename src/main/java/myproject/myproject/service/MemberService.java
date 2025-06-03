@@ -27,6 +27,8 @@ public class MemberService {
 
     // 회원가입 : 암호화 insert
     public Member registerMember(Member member) {
+        validateDuplicateMember(member);
+
         String encodedPassword = passwordEncoder.encode(member.getPassword());
         member.setPassword(encodedPassword);
 
@@ -34,12 +36,12 @@ public class MemberService {
     }
 
     // 회원가입 : 비 암호화 insert
-    public Long join(Member member) {
-        validateDuplicateMember(member);
-
-        memberRepository.save(member);
-        return member.getId();
-    }
+//    public Long join(Member member) {
+//        validateDuplicateMember(member);
+//
+//        memberRepository.save(member);
+//        return member.getId();
+//    }
 
     // 중복 검사 - findByEmail
     private void validateDuplicateMember(Member member) {
