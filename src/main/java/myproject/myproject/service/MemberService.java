@@ -55,8 +55,11 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    // 개별 회원 조회
+    // 개별 회원 조회 - by id
     public Optional<Member> findOne(Long memberId){
         return memberRepository.findById(memberId);
     }
+
+    // 개별 회원 조회 - by email
+    public Optional<Member> findByEmail(String email) { return this.memberRepository.findByEmail(email); }
 }
