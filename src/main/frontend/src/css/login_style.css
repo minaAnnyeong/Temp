@@ -1,0 +1,28 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 10vh auto;
+    padding: 5vh 0;
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+#loginBtn {
+    display: flex;
+    /* override */
+    padding: 0.7rem 1.0rem;
+    width: 30%;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.small-links a {
+    text-decoration: none;
+    font-size: 0.8rem;
+}
