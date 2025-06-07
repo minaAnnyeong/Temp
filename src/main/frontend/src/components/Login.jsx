@@ -20,28 +20,28 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        /*
+    /*
             Spring Security 로 인해 /login 은
             자동으로 MembersDetailsService 의
             loadUserByUsername()메소드를 호출한다.
-        */
+    */
+    const handleSubmit = (e) => {
+        e.preventDefault(); // 자동 리로딩 방지
+
         axios.post('/api/login',
             new URLSearchParams({
-                email: formData.email,
+                username: formData.email,
                 password: formData.password, // User: raw password 입력
         }), {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             withCredentials: true // 세션
         })
             .then((response) => {
-                alert("로그인 성공");
+                alert("로그인 성공! 홈으로 돌아갑니다.");
                 navigate("/");
             })
             .catch((error) => {
-                alert("아이디 또는 비밀번호가 틀립니다.");
+                alert("아이디 또는 비밀번호가 틀립니다. error: " + error.message);
             });
     };
 

@@ -9,7 +9,8 @@ public class FrontendController {
     //@RequestMapping(value = {"/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
     @RequestMapping(value = {
             "/",
-            "/signup"
+            "/signup",
+            "/login"
     })
     public String forwardToFrontend() {
         return "forward:/index.html";

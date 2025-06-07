@@ -1,66 +1,11 @@
 import '../../css/navbar_style.css';
 
-import React, {useEffect, useRef, useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
-import axios from 'axios';
+import LoginSessionDataDisplay from './LoginSessionDataDisplay';
+
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
-    // let interval;
-    const intervalRef = useRef(null);
-    const [authenticated, setAuthenticated] = useState({
-        username:'',
-        time: '00:00',
-        loggedIn : false
-    });
-    const [sessionExpired, setSessionExpired] = useState(false);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        fetchLoginSessionInfo();
-        const interval = setInterval(fetchLoginSessionInfo, 1000);
-        return () => clearInterval(intervalRef.current); // clean
-
-    }, []);
-
-    const fetchLoginSessionInfo = async () => {
-        try {
-            const res = await axios.get("/api/session-info", { withCredentials: true });
-
-            if (res.data.loggedIn) {
-                const { loggedIn, username, minutes, seconds } = res.data;
-                setAuthenticated({
-                    username: username,
-                    // minutes , seconds => time 하나로 포맷팅
-                    time: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`,
-                    loggedIn: loggedIn
-                });
-
-                if (!sessionExpired) {
-                    setSessionExpired(true);
-                    clearInterval(intervalRef.current); // interval 중지
-                    // alert 창 띄운 뒤 로그아웃 및 홈으로 리디렉트
-                    alert("자동 로그아웃 되었습니다. 다시 로그인 해 주세요.");
-                    await axios.post("/api/logout", {}, { withCredentials: true });
-                    navigate("/");
-
-                    res.data.loggedIn = false;
-                }
-
-            }
-        } catch (err) {
-            console.error("Session check failed:", err);
-            setAuthenticated({ username: '', time: '00:00', loggedIn: false });
-        }
-    };
-
-    const handleLogout = () => {
-        axios.post("/api/logout", {withCredentials: true})
-            .then(res => {
-                window.location.href = "/"; // 로그아웃 시 홈 으로 로드
-            });
-    };
-
-    if (sessionExpired) return null; // 리디랙션 동안 아무 행동도 취하지 x
 
     return (
         <>
@@ -112,17 +57,9 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                <div className="user-log">
-                    {authenticated.loggedIn ? (
-                        <>
-                            <span>{authenticated.username} 님 | </span>
-                            <span> {authenticated.time} | </span>
-                            <a href="#" onClick={handleLogout}>로그아웃</a>
-                        </>
-                    ) : (
-                        <Link to="/login">로그인</Link>
-                    )}
-                </div>
+                {/*  */}
+                <LoginSessionDataDisplay key={window.location.pathname} />
+
             </nav>
         </>
     );
