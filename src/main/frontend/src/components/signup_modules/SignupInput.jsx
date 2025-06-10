@@ -41,7 +41,6 @@ const SignupInput = ({onValidChange, formData, setFormData}) => {
                     required
                     autoFocus
                 />
-                {/*{errors.email && <small className="error-text">{errors.email}</small>}*/}
             </div>
             {errors.email && <small className="error-text">{errors.email}</small>}
 

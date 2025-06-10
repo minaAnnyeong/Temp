@@ -14,4 +14,7 @@ public interface SpringDataJpaMemberRepository
 
     @Override
     Optional<Member> findByEmail(String email);
+
+//    @Override
+//    void delete(Member entity);
 }

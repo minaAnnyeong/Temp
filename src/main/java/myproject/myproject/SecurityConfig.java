@@ -55,6 +55,7 @@ public class SecurityConfig {
                                 "/", "/index.html", "/static/**",
                                 "/api/members/**", "/signup", "/api/login", "/api/logout", "/error"
                         ).permitAll() // 로그인 여부에 상관없이 누구나 접근을 허용한다.
+                        .requestMatchers("/api/mypage/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -76,6 +77,7 @@ public class SecurityConfig {
                             response.setStatus(HttpServletResponse.SC_OK);
                         }) // 로그아웃 성공 -> return http '200 Ok'
                 );
+
 
         return http.build();
     }

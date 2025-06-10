@@ -1,0 +1,39 @@
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+
+.common {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    margin: 10vh auto;
+    padding: 5vh 0;
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.common .title {
+    text-align: center;
+    margin: 1.1rem;
+    color: #007BFF;
+}
+
+
+.common .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}

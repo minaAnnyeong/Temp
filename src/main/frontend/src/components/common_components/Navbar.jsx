@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar-main">
                 <Link to="/" className="logo">F.A.M</Link>
                 <ul className="nav-links">
                     <li className="dropdown">
@@ -48,7 +48,8 @@ const Navbar = () => {
                     </li>
 
                     <li className="dropdown">
-                        <a href="#">마이페이지</a>
+                        {/*<a href="/mypage">마이페이지</a>*/}
+                        <Link to="/mypage">마이페이지</Link>
                         <ul className="dropdown-menu">
                             <li><a href="#">프로필</a></li>
                             <li><a href="#">내 자산 조회</a></li>

@@ -1,5 +1,5 @@
-/* Navbar */
-.navbar {
+/* Main-Navbar */
+.navbar-main {
     background: #000000;
     display: flex;
     justify-content: space-between; /* 로고 (여백) 네비바 */
@@ -7,6 +7,8 @@
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .logo {
     text-decoration: none;

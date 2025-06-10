@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import Navbar from './common_components/Navbar';
+import Footer from './common_components/Footer';
 import '../css/base.css';
 import '../css/home_style.css';
 import '../css/common_button_style.css'; // 버튼 스타일
 import '../css/effect_fadein.css'; // fade-in 효과
-
-import Navbar from './common_components/Navbar';
-import Footer from './common_components/Footer';
-import { useNavigate } from 'react-router-dom';
 
 const bannerImages = [
     '../assets/images/home_banner/img_1.png',

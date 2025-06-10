@@ -44,7 +44,7 @@ const LoginSessionDataDisplay = () => {
         <div className="login-session-data">
             {authenticated.loggedIn ? (
                 <>
-                    <span>{authenticated.username} 님 | </span>
+                    <span>안녕하세요 {authenticated.username} 님 | </span>
                     <a href="#" onClick={() => {
                     axios.post("/api/logout", {}, {withCredentials: true})
                         .then(res => {

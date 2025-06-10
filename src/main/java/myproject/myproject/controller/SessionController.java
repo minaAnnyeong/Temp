@@ -16,15 +16,17 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-//@RequestMapping("/api")
+@RequestMapping("/api")
 public class SessionController {
 
     @ResponseBody
-    @GetMapping("/api/session-info")
+    @GetMapping("/session-info")
     public Map<String, Object> getSessionInfo() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-
+        /*
+            Log
+        */
         log.info("로그인 아이디 (memberEmail): "+auth.getName());
         log.info("로그인 T/F: "+String.valueOf(auth.isAuthenticated()));
 
@@ -45,6 +47,10 @@ public class SessionController {
         }
 
         return sessionInfo;
-
     }
+    
+    /*
+        마이페이지
+    */
+
 }

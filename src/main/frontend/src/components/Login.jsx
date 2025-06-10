@@ -1,16 +1,16 @@
-import Navbar from './common_components/Navbar';
-import Footer from './common_components/Footer';
-
-import '../css/base.css'; // 바탕 스타일
-import '../css/common_form_style.css'; // 폼 스타일
-import '../css/login_style.css';
-import '../css/effect_fadein.css'; // fade-in 효과
-
 import { Link } from 'react-router-dom';
 import axios from "axios";
 // import {fullFormats as formData} from "ajv-formats/src/formats";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import Navbar from './common_components/Navbar';
+import Footer from './common_components/Footer';
+import '../css/base.css'; // 바탕 스타일
+import '../css/common_form_style.css'; // 폼 스타일
+import '../css/login_style.css';
+import '../css/effect_fadein.css'; // fade-in 효과
+
+
 
 const Login = () => {
     const [formData, setFormData] = useState({
